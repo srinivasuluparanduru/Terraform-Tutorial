@@ -24,11 +24,16 @@ pipeline {
                  script{
                         dir("terraform")
                         {
-                            git "https://github.com/easyawslearn/Terraform-Tutorial.git"
+                            git "https://github.com/srinivasuluparanduru/Terraform-Tutorial.git"
                         }
                     }
                 }
             }
+        stage('Terraform Version'){
+            steps{
+                sh 'terraform --version'
+            }
+        }
 
         stage('Plan') {
             steps {
